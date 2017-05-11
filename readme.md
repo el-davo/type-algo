@@ -1,0 +1,1 @@
+[![Build Status](https://travis-ci.org/el-davo/type-algo.svg?branch=master)](https://travis-ci.org/el-davo/type-algo)
