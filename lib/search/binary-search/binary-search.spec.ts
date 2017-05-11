@@ -4,25 +4,25 @@ import {quicksort} from '../../sort/quicksort/quicksort';
 describe('Binary search', () => {
 
   it('should find an element in an array', () => {
-    let arr = [10, 25, 44, 51, 55, 74, 5000, 7000, 7651, 7655];
+    const arr = [10, 25, 44, 51, 55, 74, 5000, 7000, 7651, 7655];
 
     binarySearch<number>(arr, 7651).should.be.true();
   });
 
   it('should not find an element that does not exist', () => {
-    let arr = [10, 25, 44, 51, 55, 74, 5000, 7000, 7651, 7655];
+    const arr = [10, 25, 44, 51, 55, 74, 5000, 7000, 7651, 7655];
 
     binarySearch<number>(arr, 12).should.be.false();
   });
 
   it('should handle minus numbers search that does not exist', () => {
-    let arr = [10, 25, 44, 51, 55, 74, 5000, 7000, 7651, 7655];
+    const arr = [10, 25, 44, 51, 55, 74, 5000, 7000, 7651, 7655];
 
     binarySearch<number>(arr, -200).should.be.false();
   });
 
   it('should find a minus number', () => {
-    let arr = [-2000, -199, -55, -9, 10, 25, 44, 51, 55, 74, 5000, 7000, 7651, 7655];
+    const arr = [-2000, -199, -55, -9, 10, 25, 44, 51, 55, 74, 5000, 7000, 7651, 7655];
 
     binarySearch<number>(arr, -55).should.be.true();
   });
@@ -40,13 +40,13 @@ describe('Binary search', () => {
   });
 
   it('should find number in big array', () => {
-    let arr = [];
+    const arr = [];
     for (let i = 0; i < 1000000; i++) {
       arr.push(Math.round(Math.random() * 1000000));
     }
 
-    let sortedArr = quicksort(arr);
-    let search = sortedArr[99202];
+    const sortedArr = quicksort(arr);
+    const search = sortedArr[99202];
 
     binarySearch<number>(sortedArr, search).should.be.true();
   });

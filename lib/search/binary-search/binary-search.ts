@@ -8,7 +8,7 @@ export function binarySearch<T>(sortedArr: T[], search: T) {
     return sortedArr[0] === search;
   }
 
-  let middle = Math.round(sortedArr.length / 2);
+  const middle = Math.round(sortedArr.length / 2);
 
   if (sortedArr[middle] === search) {
     return true;

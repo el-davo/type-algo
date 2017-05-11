@@ -1,4 +1,4 @@
-import {customQuicksort} from "./custom-quicksort";
+import {customQuicksort} from './custom-quicksort';
 
 describe('Custom quick sort algorithm', () => {
 

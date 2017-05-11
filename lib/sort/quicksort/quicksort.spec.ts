@@ -1,4 +1,4 @@
-import {quicksort} from "./quicksort";
+import {quicksort} from './quicksort';
 
 describe('Quick sort algorithm', () => {
 
