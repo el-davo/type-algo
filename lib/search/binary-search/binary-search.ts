@@ -1,17 +1,17 @@
-export function binarySearch<T>(arr: T[], search: T) {
+export function binarySearch<T>(sortedArr: T[], search: T) {
 
-  if (!arr || arr.length === 0) {
+  if (!sortedArr || sortedArr.length === 0) {
     return false;
   }
 
-  let middle = Math.round(arr.length / 2);
+  let middle = Math.round(sortedArr.length / 2);
 
-  if (arr[middle] === search) {
+  if (sortedArr[middle] === search) {
     return true;
-  } else if (arr[middle] > search) {
-    return binarySearch(arr.slice(0, middle), search);
-  } else if (arr[middle] < search) {
-    return binarySearch(arr.slice(middle, arr.length), search);
+  } else if (sortedArr[middle] > search) {
+    return binarySearch(sortedArr.slice(0, middle), search);
+  } else if (sortedArr[middle] < search) {
+    return binarySearch(sortedArr.slice(middle, sortedArr.length), search);
   }
 
   return false;
