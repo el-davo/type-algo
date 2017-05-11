@@ -1,4 +1,5 @@
 import {binarySearch} from './binary-search';
+import {quicksort} from '../../sort/quicksort/quicksort';
 
 describe('Binary search', () => {
 
@@ -36,5 +37,17 @@ describe('Binary search', () => {
     const arr = ['abc', 'bas', 'cda', 'xtz', 'ytb'];
 
     binarySearch<string>(arr, 'xxx').should.be.false();
+  });
+
+  it('should find number in big array', () => {
+    let arr = [];
+    for (let i = 0; i < 1000000; i++) {
+      arr.push(Math.round(Math.random() * 1000000));
+    }
+
+    let sortedArr = quicksort(arr);
+    let search = sortedArr[99202];
+
+    binarySearch<number>(sortedArr, search).should.be.true();
   });
 });
