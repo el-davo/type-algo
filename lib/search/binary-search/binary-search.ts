@@ -1,6 +1,5 @@
 export function binarySearch<T>(arr: T[], search: T) {
 
-  console.log(arr);
   if (!arr || arr.length === 0) {
     return false;
   }
