@@ -4,6 +4,10 @@ export function binarySearch<T>(sortedArr: T[], search: T) {
     return false;
   }
 
+  if (sortedArr.length === 1) {
+    return sortedArr[0] === search;
+  }
+
   let middle = Math.round(sortedArr.length / 2);
 
   if (sortedArr[middle] === search) {
