@@ -1,4 +1,4 @@
-import {bubbleSort} from "./bubble-sort";
+import {bubbleSort} from './bubble-sort';
 
 describe('Bubble sort', () => {
 
