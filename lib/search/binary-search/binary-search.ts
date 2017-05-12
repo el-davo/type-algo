@@ -1,4 +1,4 @@
-export function binarySearch<T>(sortedArr: T[], search: T) {
+export function binarySearch<T>(sortedArr: T[], search: T): boolean {
 
   if (!sortedArr || sortedArr.length === 0) {
     return false;
