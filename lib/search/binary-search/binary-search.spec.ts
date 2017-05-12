@@ -41,8 +41,8 @@ describe('Binary search', () => {
 
   it('should find number in big array', () => {
     const arr = [];
-    for (let i = 0; i < 1000000; i++) {
-      arr.push(Math.round(Math.random() * 1000000));
+    for (let i = 0; i < 100000; i++) {
+      arr.push(Math.round(Math.random() * 100000));
     }
 
     const sortedArr = quicksort(arr);
