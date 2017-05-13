@@ -1,16 +1,18 @@
 export function selectionSort<T>(arr: T[]): T[] {
 
-    for (let i = 0; i < arr.length; i++) {
+    for (let i = 0; i < arr.length - 1; i++) {
 
-        const key = arr[i];
-        let j = i - 1;
+        let min = i;
 
-        while (j >= 0 && arr[j] > key) {
-            arr[j + 1] = arr[j];
-            j--;
+        for (let x = i; x < arr.length; x++) {
+            if (arr[x] < arr[min]) {
+                min = x;
+            }
         }
 
-        arr[j + 1] = key;
+        const temp = arr[min];
+        arr[min] = arr[i];
+        arr[i] = temp;
     }
 
     return arr;
