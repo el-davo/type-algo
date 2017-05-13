@@ -43,4 +43,5 @@ describe('Selection sort', () => {
 
         selectionSort<string>(arr).should.eql(expected);
     });
+
 });

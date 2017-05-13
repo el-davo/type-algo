@@ -36,4 +36,5 @@ describe('Quick sort algorithm', () => {
 
         quicksort(elements).should.eql(expected);
     });
+
 });
