@@ -1,13 +1,13 @@
 export function heapSort<T>(arr: T[]): T[] {
 
-    let size = arr.length;
+    const size = arr.length;
 
     for (let i = Math.floor(size / 2 - 1); i >= 0; i--) {
         _heapify(arr, size, i);
     }
 
     for (let i = size - 1; i >= 0; i--) {
-        let temp = arr[0];
+        const temp = arr[0];
         arr[0] = arr[i];
         arr[i] = temp;
 
@@ -19,8 +19,8 @@ export function heapSort<T>(arr: T[]): T[] {
 
 function _heapify<T>(arr: T[], size: number, index: number) {
     let largest = index;
-    let left = 2 * index + 1;
-    let right = 2 * index + 2;
+    const left = 2 * index + 1;
+    const right = 2 * index + 2;
 
     // If left child is larger than root
     if (left < size && arr[left] > arr[largest]) {
@@ -33,8 +33,8 @@ function _heapify<T>(arr: T[], size: number, index: number) {
     }
 
     // If largest is not root
-    if (largest != index) {
-        let swap = arr[index];
+    if (largest !== index) {
+        const swap = arr[index];
         arr[index] = arr[largest];
         arr[largest] = swap;
 

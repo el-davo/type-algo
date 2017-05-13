@@ -16,7 +16,6 @@ describe('Heap sort', () => {
         heapSort(elements).should.eql(expected);
     });
 
-
     it('should handle single element array', () => {
         const arr = [198];
         const expected = [198];
