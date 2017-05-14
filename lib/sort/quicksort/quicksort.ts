@@ -1,4 +1,4 @@
-export function quicksort(arr): number[] {
+export function quicksort<T>(arr: T[]): T[] {
 
     if (!arr || arr.length === 0) {
         return [];
@@ -12,5 +12,5 @@ export function quicksort(arr): number[] {
         arr[i] < pivot ? left.push(arr[i]) : right.push(arr[i]);
     }
 
-    return [...quicksort(left), ...pivot, ...quicksort(right)];
+    return [...quicksort(left), pivot, ...quicksort(right)];
 }

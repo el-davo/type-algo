@@ -1,4 +1,4 @@
-export function customQuicksort<T>(arr, customSort): T[] {
+export function customQuicksort<T>(arr: T[], customSort): T[] {
 
   if (!arr || arr.length === 0) {
     return [];
@@ -12,6 +12,6 @@ export function customQuicksort<T>(arr, customSort): T[] {
     customSort(pivot, arr[i]) ? left.push(arr[i]) : right.push(arr[i]);
   }
 
-  return [...customQuicksort(left, customSort), ...pivot, ...customQuicksort(right, customSort)];
+  return [...customQuicksort(left, customSort), pivot, ...customQuicksort(right, customSort)];
 
 }
