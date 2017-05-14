@@ -43,5 +43,5 @@ describe('Merge sort', () => {
 
         mergeSort<string>(arr).should.eql(expected);
     });
-    
+
 });

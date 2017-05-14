@@ -4,16 +4,16 @@ export function mergeSort<T>(arr: T[]): T[] {
         return arr;
     }
 
-    let middle = Math.floor(arr.length / 2);
-    let left = arr.slice(0, middle);
-    let right = arr.slice(middle, arr.length);
+    const middle = Math.floor(arr.length / 2);
+    const left = arr.slice(0, middle);
+    const right = arr.slice(middle, arr.length);
 
     return merge(mergeSort(left), mergeSort(right));
 }
 
 function merge<T>(left: T[], right: T[]): T[] {
 
-    let result = [];
+    const result = [];
 
     while (left.length && right.length) {
         if (left[0] <= right[0]) {
