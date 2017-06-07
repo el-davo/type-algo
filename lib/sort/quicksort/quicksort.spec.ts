@@ -3,8 +3,8 @@ import { quicksort } from './quicksort';
 describe('Quick sort algorithm', () => {
 
     it('should sort an array of integers', () => {
-        const arr = [6, 31415926535897932384626433832795, 1, 3, 10, 3, 5];
-        const expected = [1, 3, 3, 5, 6, 10, 31415926535897932384626433832795];
+        const arr = [31415926535897932384626433832795, 1, 3, 10, 3, 5];
+        const expected = [1, 3, 3, 5, 10, 31415926535897932384626433832795];
         quicksort<number>(arr).should.eql(expected);
     });
 
