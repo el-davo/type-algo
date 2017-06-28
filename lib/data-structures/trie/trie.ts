@@ -3,14 +3,51 @@ interface Children {
 }
 
 class TrieNode {
-    value: string;
-    isWord: boolean;
-    children: Children;
+    private value: string;
+    private word: boolean;
+    private parent: TrieNode;
+    private children: Children;
 
     constructor(value: string, isWord: boolean) {
         this.children = {};
         this.value = value;
-        this.isWord = isWord;
+        this.word = isWord;
+    }
+
+    getValue(): string {
+        return this.value;
+    }
+
+    isWord(): boolean {
+        return this.word;
+    }
+
+    getParent(): TrieNode {
+        return this.parent;
+    }
+
+    getChildren() {
+        return this.children;
+    }
+
+    setParent(parent: TrieNode) {
+        this.parent = parent;
+    }
+
+    setIsWord(isWord: boolean) {
+        this.word = isWord;
+    }
+
+    getWord() {
+        let output = [];
+        let node: TrieNode = this;
+
+        while (node) {
+            output.unshift(node.getValue());
+            node = node.getParent();
+        }
+
+        return output.join('');
     }
 }
 
@@ -27,22 +64,23 @@ export class Trie {
     }
 
     addWord(word: string) {
-        let chars = word.split('');
         let currNode = this.root;
 
         for (let i = 0; i < word.length; i++) {
 
             // Node does not exist so create it
-            if (!currNode.children[word[i]]) {
-                currNode.children[word[i]] = new TrieNode(word[i], i == word.length - 1);
+            if (!currNode.getChildren()[word[i]]) {
+                currNode.getChildren()[word[i]] = new TrieNode(word[i], i == word.length - 1);
+
+                currNode.getChildren()[word[i]].setParent(currNode);
             }
 
             // Go to next depth
-            currNode = currNode.children[word[i]];
+            currNode = currNode.getChildren()[word[i]];
 
             // Check if this is a complete word
             if (i == word.length - 1) {
-                currNode.isWord = true;
+                currNode.setIsWord(true);
             }
         }
     }
@@ -52,8 +90,8 @@ export class Trie {
         let output: string[] = [];
 
         for (let i = 0; i < word.length; i++) {
-            if (node.children[word[i]]) {
-                node = node.children[word[i]];
+            if (node.getChildren()[word[i]]) {
+                node = node.getChildren()[word[i]];
             } else {
                 return output;
             }
@@ -65,12 +103,12 @@ export class Trie {
     }
 
     private findAllWords(node: TrieNode, arr: string[]) {
-        if (node.isWord) {
-            arr.unshift(node.value);
+        if (node.isWord()) {
+            arr.unshift(node.getWord());
         }
 
-        for (let child in node.children) {
-            this.findAllWords(node.children[child], arr);
+        for (let child in node.getChildren()) {
+            this.findAllWords(node.getChildren()[child], arr);
         }
     }
 }
