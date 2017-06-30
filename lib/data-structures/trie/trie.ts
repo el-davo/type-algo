@@ -39,15 +39,15 @@ class TrieNode {
     }
 
     getWord() {
-        let output = [];
+        let output = '';
         let node: TrieNode = this;
 
         while (node) {
-            output.unshift(node.getValue());
+            output = node.getValue() + output;
             node = node.getParent();
         }
 
-        return output.join('');
+        return output;
     }
 }
 

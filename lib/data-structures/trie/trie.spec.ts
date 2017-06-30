@@ -41,4 +41,26 @@ describe('Trie', () => {
         trie.find('th').should.eql(['the']);
         trie.find('tent').should.eql(['tent']);
     });
+
+    it('should handle lots of words', () => {
+        let search = 'mySuperWord';
+        for (let i = 0; i < 200000; i++) {
+            trie.addWord(makeid());
+            if(i === 25000) {
+                trie.addWord(search);
+            }
+        }
+
+        trie.find(search).should.eql([search]);
+    });
 });
+
+function makeid() {
+    var text = "";
+    var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+    for (var i = 0; i < 5; i++)
+        text += possible.charAt(Math.floor(Math.random() * possible.length));
+
+    return text;
+}
