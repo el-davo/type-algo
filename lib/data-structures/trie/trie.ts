@@ -70,7 +70,7 @@ export class Trie {
 
             // Node does not exist so create it
             if (!currNode.getChildren()[word[i]]) {
-                currNode.getChildren()[word[i]] = new TrieNode(word[i], i == word.length - 1);
+                currNode.getChildren()[word[i]] = new TrieNode(word[i], i === word.length - 1);
 
                 currNode.getChildren()[word[i]].setParent(currNode);
             }
@@ -79,7 +79,7 @@ export class Trie {
             currNode = currNode.getChildren()[word[i]];
 
             // Check if this is a complete word
-            if (i == word.length - 1) {
+            if (i === word.length - 1) {
                 currNode.setIsWord(true);
             }
         }
@@ -87,11 +87,11 @@ export class Trie {
 
     find(word: string): string[] {
         let node = this.root;
-        let output: string[] = [];
+        const output: string[] = [];
 
-        for (let i = 0; i < word.length; i++) {
-            if (node.getChildren()[word[i]]) {
-                node = node.getChildren()[word[i]];
+        for (const letter of word) {
+            if (node.getChildren()[letter]) {
+                node = node.getChildren()[letter];
             } else {
                 return output;
             }
@@ -107,7 +107,7 @@ export class Trie {
             arr.unshift(node.getWord());
         }
 
-        for (let child in node.getChildren()) {
+        for (const child of Object.keys(node.getChildren())) {
             this.findAllWords(node.getChildren()[child], arr);
         }
     }

@@ -1,4 +1,4 @@
-import { Trie } from './trie';
+import {Trie} from './trie';
 
 describe('Trie', () => {
 
@@ -14,21 +14,21 @@ describe('Trie', () => {
 
     it('should add words to the trie', () => {
         trie.getTrie().getValue().should.eql('');
-        trie.getTrie().getChildren()['t'].getValue().should.eql('t');
-        trie.getTrie().getChildren()['t'].getChildren()['e'].getValue().should.eql('e');
-        trie.getTrie().getChildren()['t'].getChildren()['e'].getChildren()['n'].getValue().should.eql('n');
-        trie.getTrie().getChildren()['t'].getChildren()['e'].getChildren()['n'].getChildren()['t'].getValue().should.eql('t');
+        trie.getTrie().getChildren().t.getValue().should.eql('t');
+        trie.getTrie().getChildren().t.getChildren().e.getValue().should.eql('e');
+        trie.getTrie().getChildren().t.getChildren().e.getChildren().n.getValue().should.eql('n');
+        trie.getTrie().getChildren().t.getChildren().e.getChildren().n.getChildren().t.getValue().should.eql('t');
 
-        trie.getTrie().getChildren()['t'].getChildren()['h'].getValue().should.eql('h');
-        trie.getTrie().getChildren()['t'].getChildren()['h'].getChildren()['e'].getValue().should.eql('e');
+        trie.getTrie().getChildren().t.getChildren().h.getValue().should.eql('h');
+        trie.getTrie().getChildren().t.getChildren().h.getChildren().e.getValue().should.eql('e');
 
-        trie.getTrie().getChildren()['t'].isWord().should.eql(false);
-        trie.getTrie().getChildren()['t'].getChildren()['e'].isWord().should.eql(false);
-        trie.getTrie().getChildren()['t'].getChildren()['e'].getChildren()['n'].isWord().should.eql(true);
-        trie.getTrie().getChildren()['t'].getChildren()['e'].getChildren()['n'].getChildren()['t'].isWord().should.eql(true);
+        trie.getTrie().getChildren().t.isWord().should.eql(false);
+        trie.getTrie().getChildren().t.getChildren().e.isWord().should.eql(false);
+        trie.getTrie().getChildren().t.getChildren().e.getChildren().n.isWord().should.eql(true);
+        trie.getTrie().getChildren().t.getChildren().e.getChildren().n.getChildren().t.isWord().should.eql(true);
 
-        trie.getTrie().getChildren()['t'].getChildren()['h'].isWord().should.eql(false);
-        trie.getTrie().getChildren()['t'].getChildren()['h'].getChildren()['e'].isWord().should.eql(true);
+        trie.getTrie().getChildren().t.getChildren().h.isWord().should.eql(false);
+        trie.getTrie().getChildren().t.getChildren().h.getChildren().e.isWord().should.eql(true);
     });
 
     it('should find words', () => {
@@ -43,10 +43,10 @@ describe('Trie', () => {
     });
 
     it('should handle lots of words', () => {
-        let search = 'mySuperWord';
+        const search = 'mySuperWord';
         for (let i = 0; i < 200000; i++) {
             trie.addWord(makeid());
-            if(i === 25000) {
+            if (i === 25000) {
                 trie.addWord(search);
             }
         }
@@ -56,11 +56,12 @@ describe('Trie', () => {
 });
 
 function makeid() {
-    var text = "";
-    var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+    let text = '';
+    const possible = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
 
-    for (var i = 0; i < 5; i++)
+    for (let i = 0; i < 5; i++) {
         text += possible.charAt(Math.floor(Math.random() * possible.length));
+    }
 
     return text;
 }
