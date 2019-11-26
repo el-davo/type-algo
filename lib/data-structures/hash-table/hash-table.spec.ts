@@ -1,4 +1,4 @@
-import { Node } from './hash-table';
+import {Node} from './hash-table';
 
 describe('Hash Table', () => {
 
@@ -84,4 +84,5 @@ describe('Hash Table', () => {
         });
 
     });
+
 });
