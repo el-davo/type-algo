@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "mocha --compilers ts:ts-node/register --recursive --require should ./lib/**/*.spec.ts*",
+    "test": "mocha --compilers ts:ts-node/register --require should --recursive './lib/**/*.spec.ts*'",
     "test:watch": "npm test -- --watch",
     "lint": "tslint lib/**/*.ts",
     "lint:fix": "npm run lint -- --fix"
