@@ -65,4 +65,12 @@ describe('Binary Search Tree', () => {
             balanced.left.right.data.should.eql(2);
         });
     });
+
+    it('should traverse tree in order', () => {
+        bst = new BST(5).insert<number>(4).insert<number>(6).insert<number>(7).insert<number>(3);
+
+        const values = [];
+
+        bst.inOrder(bst, values).should.eql([3, 4, 5, 6, 7]);
+    });
 });

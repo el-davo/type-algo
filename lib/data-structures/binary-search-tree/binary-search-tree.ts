@@ -62,4 +62,17 @@ export class BST {
 
         return storedValues;
     }
+
+    public inOrder<T>(node: BST, values: T[]) {
+
+        if (!node) {
+            return;
+        }
+
+        this.inOrder(node._left, values);
+        values.push(node.data);
+        this.inOrder(node._right, values);
+
+        return values;
+    }
 }
