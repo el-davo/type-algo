@@ -14,6 +14,8 @@ deploy:
   provider: npm
   email: "david.ahern26@gmail.com"
   api_key: "649af625-0ad1-46c0-8f7a-4754aa64b97f"
+  on:
+    branch: master
 
 cache:
   yarn: true
