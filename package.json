@@ -1,24 +1,26 @@
 {
   "name": "type-algo",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
-    "test": "mocha --compilers ts:ts-node/register --require should --recursive './lib/**/*.spec.ts*'",
+    "test": "mocha -r ts-node/register './lib/**/*.spec.ts*'",
     "test:watch": "npm test -- --watch",
     "lint": "tslint lib/**/*.ts",
-    "lint:fix": "npm run lint -- --fix"
+    "lint:fix": "npm run lint -- --fix",
+    "build": "tsc"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@types/mocha": "^2.2.41",
-    "@types/should": "^8.3.0",
-    "mocha": "^3.3.0",
-    "should": "^11.2.1",
-    "ts-node": "^3.0.4",
-    "tslint": "^5.2.0",
-    "typescript": "^2.3.2"
+    "@types/chai": "^4.2.5",
+    "@types/mocha": "^5.2.7",
+    "@types/should": "^13.0.0",
+    "chai": "^4.2.0",
+    "mocha": "^6.2.2",
+    "ts-node": "^8.5.4",
+    "tslint": "^5.20.1",
+    "typescript": "^3.7.2"
   }
 }

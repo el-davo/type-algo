@@ -3,6 +3,7 @@
     "tslint:latest"
   ],
   "rules": {
+    "no-implicit-dependencies": [true, "dev"],
     "callable-types": true,
     "interface-name": false,
     "interface-over-type-literal": true,
