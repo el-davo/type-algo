@@ -1,3 +1,8 @@
+/**
+ * Stable Sort Algorithm with 0(n^2) time complexity
+ *
+ * @param arr An array of numbers
+ */
 export function bubbleSort(arr: number[]) {
     const lastUnsortedIndex = arr.length - 1;
 
