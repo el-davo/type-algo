@@ -13,7 +13,7 @@ install:
 deploy:
   provider: npm
   email: "david.ahern26@gmail.com"
-  api_key: "649af625-0ad1-46c0-8f7a-4754aa64b97f"
+  api_key: "60611249-7341-4d5f-af9f-040dee946487"
   on:
     branch: master
 
