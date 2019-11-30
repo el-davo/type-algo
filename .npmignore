@@ -1,1 +1,5 @@
 ./lib
+.travis.yml
+.gitignore
+tsconfig.json
+tslint.json
