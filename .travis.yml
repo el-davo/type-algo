@@ -13,9 +13,8 @@ script:
   - yarn build
 
 deploy:
-  provider: npm
-  email: "david.ahern26@gmail.com"
-  api_key: $NPM_TOKEN
+  provider: script
+  script: yarn semantic-release
   on:
     branch: master
 

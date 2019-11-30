@@ -1,6 +1,6 @@
 {
   "name": "type-algo",
-  "version": "0.0.5",
+  "version": "0.0.0-development",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -8,7 +8,8 @@
     "test:watch": "npm test -- --watch",
     "lint": "tslint lib/**/*.ts",
     "lint:fix": "npm run lint -- --fix",
-    "build": "tsc"
+    "build": "tsc",
+    "semantic-release": "semantic-release"
   },
   "files": [
     "dist"
@@ -22,9 +23,15 @@
     "@types/should": "^13.0.0",
     "chai": "^4.2.0",
     "mocha": "^6.2.2",
+    "semantic-release": "^15.13.31",
+    "semantic-release-cli": "^5.2.3",
     "ts-node": "^8.5.4",
     "tslint": "^5.20.1",
     "typescript": "^3.7.2"
   },
-  "dependencies": {}
+  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/el-davo/type-algo.git"
+  }
 }
