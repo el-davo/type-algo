@@ -3,11 +3,13 @@ import {selectionSort} from './selection/selection';
 import {insertionSort} from './insertion/insertion';
 import {shellSort} from './shell/shell';
 import {mergeSort} from './merge/merge';
+import {quickSort} from './quicksort/quicksort';
 
 export const sort = {
     bubbleSort,
     selectionSort,
     insertionSort,
     shellSort,
-    mergeSort
+    mergeSort,
+    quickSort
 };
