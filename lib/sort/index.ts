@@ -4,6 +4,7 @@ import {insertionSort} from './insertion/insertion';
 import {shellSort} from './shell/shell';
 import {mergeSort} from './merge/merge';
 import {quickSort} from './quicksort/quicksort';
+import {countingSort} from './counting/counting';
 
 export const sort = {
     bubbleSort,
@@ -11,5 +12,6 @@ export const sort = {
     insertionSort,
     shellSort,
     mergeSort,
-    quickSort
+    quickSort,
+    countingSort
 };
